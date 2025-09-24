@@ -1,4 +1,4 @@
-# remark-gfm
+# @jhuix/remark-gfm
 
 [![Build][build-badge]][build]
 [![Coverage][coverage-badge]][coverage]
@@ -10,6 +10,7 @@
 
 **[remark][]** plugin to support [GFM][] (autolink literals, footnotes,
 strikethrough, tables, tasklists).
+This extension is based on the [remark-gfm][] extension and has been updated to support headless tables.
 
 ## Contents
 
@@ -79,7 +80,7 @@ always the best choice.
 
 If you *just* want to turn markdown into HTML (with maybe a few extensions such
 as GFM), we recommend [`micromark`][micromark] with
-[`micromark-extension-gfm`][micromark-extension-gfm] instead.
+[`@jhuix/micromark-extension-gfm`][jhuix-micromark-extension-gfm] instead.
 If you don’t use plugins and want to access the syntax tree, you can use
 [`mdast-util-from-markdown`][mdast-util-from-markdown] with
 [`mdast-util-gfm`][mdast-util-gfm].
@@ -90,20 +91,20 @@ This package is [ESM only][esm].
 In Node.js (version 16+), install with [npm][]:
 
 ```sh
-npm install remark-gfm
+npm install @jhuix/remark-gfm
 ```
 
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import remarkGfm from 'https://esm.sh/remark-gfm@4'
+import remarkGfm from 'https://esm.sh/@jhuix/remark-gfm@5'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import remarkGfm from 'https://esm.sh/remark-gfm@4?bundle'
+  import remarkGfm from 'https://esm.sh/@jhuix/remark-gfm@5?bundle'
 </script>
 ```
 
@@ -143,7 +144,7 @@ A note[^1]
 
 ```js
 import rehypeStringify from 'rehype-stringify'
-import remarkGfm from 'remark-gfm'
+import remarkGfm from '@jhuix/remark-gfm'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import {read} from 'to-vfile'
@@ -231,6 +232,8 @@ Configuration (TypeScript type).
   — whether to align table pipes
 * `tableCellPadding` (`boolean`, default: `true`)
   — whether to add a space of padding between table pipes and cells
+* `tableHeadless` (`boolean`, default: `true`)
+  — whether support headless table
 
 ## Examples
 
@@ -265,7 +268,7 @@ First, let’s show the problem:
 
 ```js
 import {remark} from 'remark'
-import remarkGfm from 'remark-gfm'
+import remarkGfm from '@jhuix/remark-gfm'
 
 const input = `| Alpha | Bravo |
 | - | - |
@@ -295,7 +298,7 @@ It can be used like so:
 ```diff
 @@ -1,5 +1,6 @@
  import {remark} from 'remark'
- import remarkGfm from 'remark-gfm'
+ import remarkGfm from '@jhuix/remark-gfm'
 +import stringWidth from 'string-width'
 
 @@ -10,7 +11,7 @@ async function main() {
@@ -326,7 +329,7 @@ supported, see each corresponding readme:
 * [autolink literal](https://github.com/micromark/micromark-extension-gfm-autolink-literal#bugs)
 * [footnote](https://github.com/micromark/micromark-extension-gfm-footnote#bugs)
 * strikethrough: n/a
-* [table](https://github.com/micromark/micromark-extension-gfm-table#bugs)
+* [table](https://github.com/jhuix-js/micromark-extension-gfm-table#bugs)
 * tasklists: n/a
 
 ## Authoring
@@ -336,7 +339,7 @@ For recommendations on how to author GFM, see each corresponding readme:
 * [autolink literal](https://github.com/micromark/micromark-extension-gfm-autolink-literal#authoring)
 * [footnote](https://github.com/micromark/micromark-extension-gfm-footnote#authoring)
 * [strikethrough](https://github.com/micromark/micromark-extension-gfm-strikethrough#authoring)
-* [table](https://github.com/micromark/micromark-extension-gfm-table#authoring)
+* [table](https://github.com/jhuix-js/micromark-extension-gfm-table#authoring)
 * [tasklists](https://github.com/micromark/micromark-extension-gfm-task-list-item#authoring)
 
 ## HTML
@@ -351,7 +354,7 @@ For info on how GitHub styles these features, see each corresponding readme:
 * [autolink literal](https://github.com/micromark/micromark-extension-gfm-autolink-literal#css)
 * [footnote](https://github.com/micromark/micromark-extension-gfm-footnote#css)
 * [strikethrough](https://github.com/micromark/micromark-extension-gfm-strikethrough#css)
-* [table](https://github.com/micromark/micromark-extension-gfm-table#css)
+* [table](https://github.com/jhuix-js/micromark-extension-gfm-table#css)
 * [tasklists](https://github.com/micromark/micromark-extension-gfm-task-list-item#css)
 
 ## Syntax
@@ -361,7 +364,7 @@ For info on the syntax of these features, see each corresponding readme:
 * [autolink literal](https://github.com/micromark/micromark-extension-gfm-autolink-literal#syntax)
 * [footnote](https://github.com/micromark/micromark-extension-gfm-footnote#syntax)
 * [strikethrough](https://github.com/micromark/micromark-extension-gfm-strikethrough#syntax)
-* [table](https://github.com/micromark/micromark-extension-gfm-table#syntax)
+* [table](https://github.com/jhuix-js/micromark-extension-gfm-table#syntax)
 * [tasklists](https://github.com/micromark/micromark-extension-gfm-task-list-item#syntax)
 
 ## Syntax tree
@@ -388,7 +391,7 @@ versions of Node.js.
 
 When we cut a new major release, we drop support for unmaintained versions of
 Node.
-This means we try to keep the current release line, `remark-gfm@^4`, compatible
+This means we try to keep the current release line, `@jhuix/remark-gfm@^5`, compatible
 with Node.js 16.
 
 This plugin works with `remark-parse` version 11+ (`remark` version 15+).
@@ -400,7 +403,7 @@ this functionality, which defaulted to true.
 
 ## Security
 
-Use of `remark-gfm` does not involve **[rehype][]** ([hast][]) or user
+Use of `@jhuix/remark-gfm` does not involve **[rehype][]** ([hast][]) or user
 content so there are no openings for [cross-site scripting (XSS)][wiki-xss]
 attacks.
 
@@ -431,7 +434,7 @@ abide by its terms.
 
 ## License
 
-[MIT][license] © [Titus Wormer][author]
+[MIT][license], [Jhuix][author] (Hui Jin)
 
 <!-- Definitions -->
 
@@ -483,7 +486,7 @@ abide by its terms.
 
 [micromark]: https://github.com/micromark/micromark
 
-[micromark-extension-gfm]: https://github.com/micromark/micromark-extension-gfm
+[jhuix-micromark-extension-gfm]: https://github.com/jhuix-js/micromark-extension-gfm
 
 [npm]: https://docs.npmjs.com/cli/install
 
@@ -492,6 +495,8 @@ abide by its terms.
 [rehype-slug]: https://github.com/rehypejs/rehype-slug
 
 [remark]: https://github.com/remarkjs/remark
+
+[remark-gfm]: https://github.com/remarkjs/remark-gfm
 
 [remark-breaks]: https://github.com/remarkjs/remark-breaks
 

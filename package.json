@@ -1,13 +1,13 @@
 {
-  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
-  "bugs": "https://github.com/remarkjs/remark-gfm/issues",
+  "author": "Jhuix [Hui Jin] <jhuix0117@gmail.com>",
+  "bugs": "https://github.com/jhuix-js/remark-gfm/issues",
   "contributors": [
-    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+    "Jhuix [Hui Jin] <jhuix0117@gmail.com>"
   ],
   "dependencies": {
     "@types/mdast": "^4.0.0",
     "mdast-util-gfm": "^3.0.0",
-    "micromark-extension-gfm": "^3.0.0",
+    "@jhuix/micromark-extension-gfm": "^4.0.0",
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
     "unified": "^11.0.0"
@@ -53,7 +53,7 @@
     "unified"
   ],
   "license": "MIT",
-  "name": "remark-gfm",
+  "name": "@jhuix/remark-gfm",
   "prettier": {
     "bracketSpacing": false,
     "singleQuote": true,
@@ -67,7 +67,7 @@
       "remark-preset-wooorm"
     ]
   },
-  "repository": "remarkjs/remark-gfm",
+  "repository": "jhuix-js/remark-gfm",
   "scripts": {
     "build": "tsc --build --clean && tsc --build && type-coverage",
     "format": "remark . --frail --output --quiet && prettier . --log-level warn --write && xo --fix",
