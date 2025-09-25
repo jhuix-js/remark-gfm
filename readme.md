@@ -238,6 +238,109 @@ Configuration (TypeScript type).
 
 ## Examples
 
+### Example: `tableHeadless`
+
+Table header can be eliminated.
+
+```markdown
+  |--|--|--|--|--|--|--|--|
+  |♜|  |♝|♛|♚|♝|♞|♜|
+  |  |♟|♟|♟|  |♟|♟|♟|
+  |♟|  |♞|  |  |  |  |  |
+  |  |♗|  |  |♟|  |  |  |
+  |  |  |  |  |♙|  |  |  |
+  |  |  |  |  |  |♘|  |  |
+  |♙|♙|♙|♙|  |♙|♙|♙|
+  |♖|♘|♗|♕|♔|  |  |♖|
+```
+
+This is parsed below when the option enabled:
+
+  <table>
+  <tbody>
+  <tr>
+  <td>♜</td>
+  <td></td>
+  <td>♝</td>
+  <td>♛</td>
+  <td>♚</td>
+  <td>♝</td>
+  <td>♞</td>
+  <td>♜</td>
+  </tr>
+  <tr>
+  <td></td>
+  <td>♟</td>
+  <td>♟</td>
+  <td>♟</td>
+  <td></td>
+  <td>♟</td>
+  <td>♟</td>
+  <td>♟</td>
+  </tr>
+  <tr>
+  <td>♟</td>
+  <td></td>
+  <td>♞</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td></td>
+  <td>♗</td>
+  <td></td>
+  <td></td>
+  <td>♟</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>♙</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>♘</td>
+  <td></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td>♙</td>
+  <td>♙</td>
+  <td>♙</td>
+  <td>♙</td>
+  <td></td>
+  <td>♙</td>
+  <td>♙</td>
+  <td>♙</td>
+  </tr>
+  <tr>
+  <td>♖</td>
+  <td>♘</td>
+  <td>♗</td>
+  <td>♕</td>
+  <td>♔</td>
+  <td></td>
+  <td></td>
+  <td>♖</td>
+  </tr>
+  </tbody>
+  </table>
+
 ### Example: `singleTilde`
 
 To turn off support for parsing strikethrough with single tildes, pass
