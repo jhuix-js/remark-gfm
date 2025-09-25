@@ -1,4 +1,4 @@
-# @jhuix/remark-gfm
+# [**@jhuix/remark-gfm**](https://github.com/jhuix-js/remark-gfm)
 
 [![Build][build-badge]][build]
 [![Coverage][coverage-badge]][coverage]
@@ -10,7 +10,8 @@
 
 **[remark][]** plugin to support [GFM][] (autolink literals, footnotes,
 strikethrough, tables, tasklists).
-This extension is based on the [remark-gfm][] extension and has been updated to support headless tables.
+This extension is based on the [remark-gfm][] extension and
+has been updated to support headless tables.
 
 ## Contents
 
@@ -391,8 +392,8 @@ versions of Node.js.
 
 When we cut a new major release, we drop support for unmaintained versions of
 Node.
-This means we try to keep the current release line, `@jhuix/remark-gfm@^5`, compatible
-with Node.js 16.
+This means we try to keep the current release line, `@jhuix/remark-gfm@^5`,
+compatible with Node.js 16.
 
 This plugin works with `remark-parse` version 11+ (`remark` version 15+).
 The previous version (v3) worked with `remark-parse` version 10 (`remark`
@@ -434,7 +435,7 @@ abide by its terms.
 
 ## License
 
-[MIT][license], [Jhuix][author] (Hui Jin)
+[MIT][license], Updated by [Jhuix][author] (Hui Jin)
 
 <!-- Definitions -->
 
@@ -478,6 +479,8 @@ abide by its terms.
 
 [health]: https://github.com/remarkjs/.github
 
+[jhuix-micromark-extension-gfm]: https://github.com/jhuix-js/micromark-extension-gfm
+
 [license]: license
 
 [mdast-util-from-markdown]: https://github.com/syntax-tree/mdast-util-from-markdown
@@ -485,8 +488,6 @@ abide by its terms.
 [mdast-util-gfm]: https://github.com/syntax-tree/mdast-util-gfm
 
 [micromark]: https://github.com/micromark/micromark
-
-[jhuix-micromark-extension-gfm]: https://github.com/jhuix-js/micromark-extension-gfm
 
 [npm]: https://docs.npmjs.com/cli/install
 
@@ -496,11 +497,11 @@ abide by its terms.
 
 [remark]: https://github.com/remarkjs/remark
 
-[remark-gfm]: https://github.com/remarkjs/remark-gfm
-
 [remark-breaks]: https://github.com/remarkjs/remark-breaks
 
 [remark-frontmatter]: https://github.com/remarkjs/remark-frontmatter
+
+[remark-gfm]: https://github.com/remarkjs/remark-gfm
 
 [remark-github]: https://github.com/remarkjs/remark-github
 
