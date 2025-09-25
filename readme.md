@@ -23,6 +23,7 @@ has been updated to support headless tables.
   * [`unified().use(remarkGfm[, options])`](#unifieduseremarkgfm-options)
   * [`Options`](#options)
 * [Examples](#examples)
+  * [Example: `tableHeadless`](#example-tableheadless)
   * [Example: `singleTilde`](#example-singletilde)
   * [Example: `stringLength`](#example-stringlength)
 * [Bugs](#bugs)
