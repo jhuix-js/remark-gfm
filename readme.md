@@ -1,17 +1,13 @@
 # [**@jhuix/remark-gfm**](https://github.com/jhuix-js/remark-gfm)
 
-[![Build][build-badge]][build]
-[![Coverage][coverage-badge]][coverage]
 [![Downloads][downloads-badge]][downloads]
 [![Size][size-badge]][size]
-[![Sponsors][sponsors-badge]][collective]
-[![Backers][backers-badge]][collective]
-[![Chat][chat-badge]][chat]
 
 **[remark][]** plugin to support [GFM][] (autolink literals, footnotes,
 strikethrough, tables, tasklists).
-This extension is based on the [remark-gfm][] extension and
-has been updated to support headless tables.
+This extension is based on the [remark-gfm][] extension.
+It support the table syntax of headless, multiline head, rowspan marker,
+colspan (left or right) marker.
 
 ## Contents
 
@@ -36,7 +32,6 @@ has been updated to support headless tables.
 * [Compatibility](#compatibility)
 * [Security](#security)
 * [Related](#related)
-* [Contribute](#contribute)
 * [License](#license)
 
 ## What is this?
@@ -85,7 +80,7 @@ as GFM), we recommend [`micromark`][micromark] with
 [`@jhuix/micromark-extension-gfm`][jhuix-micromark-extension-gfm] instead.
 If you don’t use plugins and want to access the syntax tree, you can use
 [`mdast-util-from-markdown`][mdast-util-from-markdown] with
-[`mdast-util-gfm`][mdast-util-gfm].
+[`@jhuix/mdast-util-gfm`][mdast-util-gfm].
 
 ## Install
 
@@ -479,7 +474,7 @@ For info on the syntax tree of these features, see each corresponding readme:
 * [autolink literal](https://github.com/syntax-tree/mdast-util-gfm-autolink-literal#syntax-tree)
 * [footnote](https://github.com/syntax-tree/mdast-util-gfm-footnote#syntax-tree)
 * [strikethrough](https://github.com/syntax-tree/mdast-util-gfm-strikethrough#syntax-tree)
-* [table](https://github.com/syntax-tree/mdast-util-gfm-table#syntax-tree)
+* [table](https://github.com/jhuix-js/mdast-util-gfm-table#syntax-tree)
 * [tasklists](https://github.com/syntax-tree/mdast-util-gfm-task-list-item#syntax-tree)
 
 ## Types
@@ -527,16 +522,6 @@ attacks.
 * [`remark-mdx`](https://github.com/mdx-js/mdx/tree/main/packages/remark-mdx)
   — support MDX (ESM, JSX, expressions)
 
-## Contribute
-
-See [`contributing.md`][contributing] in [`remarkjs/.github`][health] for ways
-to get started.
-See [`support.md`][support] for ways to get help.
-
-This project has a [code of conduct][coc].
-By interacting with this repository, organization, or community you agree to
-abide by its terms.
-
 ## License
 
 [MIT][license], Updated by [Jhuix][author] (Hui Jin)
@@ -549,29 +534,9 @@ abide by its terms.
 
 [author]: https://wooorm.com
 
-[backers-badge]: https://opencollective.com/unified/backers/badge.svg
+[downloads]: https://www.npmjs.com/package/@jhuix/remark-gfm
 
-[build]: https://github.com/remarkjs/remark-gfm/actions
-
-[build-badge]: https://github.com/remarkjs/remark-gfm/workflows/main/badge.svg
-
-[chat]: https://github.com/remarkjs/remark/discussions
-
-[chat-badge]: https://img.shields.io/badge/chat-discussions-success.svg
-
-[coc]: https://github.com/remarkjs/.github/blob/HEAD/code-of-conduct.md
-
-[collective]: https://opencollective.com/unified
-
-[contributing]: https://github.com/remarkjs/.github/blob/HEAD/contributing.md
-
-[coverage]: https://codecov.io/github/remarkjs/remark-gfm
-
-[coverage-badge]: https://img.shields.io/codecov/c/github/remarkjs/remark-gfm.svg
-
-[downloads]: https://www.npmjs.com/package/remark-gfm
-
-[downloads-badge]: https://img.shields.io/npm/dm/remark-gfm.svg
+[downloads-badge]: https://img.shields.io/npm/dm/@jhuix/remark-gfm.svg
 
 [esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
 
@@ -581,15 +546,13 @@ abide by its terms.
 
 [hast]: https://github.com/syntax-tree/hast
 
-[health]: https://github.com/remarkjs/.github
-
 [jhuix-micromark-extension-gfm]: https://github.com/jhuix-js/micromark-extension-gfm
 
 [license]: license
 
 [mdast-util-from-markdown]: https://github.com/syntax-tree/mdast-util-from-markdown
 
-[mdast-util-gfm]: https://github.com/syntax-tree/mdast-util-gfm
+[mdast-util-gfm]: https://github.com/jhuix-js/mdast-util-gfm
 
 [micromark]: https://github.com/micromark/micromark
 
@@ -615,11 +578,7 @@ abide by its terms.
 
 [size-badge]: https://img.shields.io/bundlejs/size/remark-gfm
 
-[sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
-
 [string-width]: https://github.com/sindresorhus/string-width
-
-[support]: https://github.com/remarkjs/.github/blob/HEAD/support.md
 
 [typescript]: https://www.typescriptlang.org
 

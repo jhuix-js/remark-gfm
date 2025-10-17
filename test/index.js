@@ -9,12 +9,12 @@ import process from 'node:process'
 import test from 'node:test'
 import {isHidden} from 'is-hidden'
 import {remark} from 'remark'
-import remarkGfm from 'remark-gfm'
+import remarkGfm from '@jhuix/remark-gfm'
 import stringWidth from 'string-width'
 
 test('remarkGfm', async function (t) {
   await t.test('should expose the public api', async function () {
-    assert.deepEqual(Object.keys(await import('remark-gfm')).sort(), [
+    assert.deepEqual(Object.keys(await import('@jhuix/remark-gfm')).sort(), [
       'default'
     ])
   })
@@ -46,7 +46,7 @@ test('fixtures', async function (t) {
 
       const input = String(await fs.readFile(inputUrl))
 
-      /** @type {Options | undefined} */
+      /** @type {Options | null| undefined} */
       let config
       /** @type {Root} */
       let expected
