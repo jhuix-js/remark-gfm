@@ -20,6 +20,7 @@ colspan (left or right) marker.
   * [`Options`](#options)
 * [Examples](#examples)
   * [Example: `tableHeadless`](#example-tableheadless)
+  * [Example: `colspanWithEmpty`](#example-colspanWithEmpty)
   * [Example: `singleTilde`](#example-singletilde)
   * [Example: `stringLength`](#example-stringlength)
 * [Bugs](#bugs)
@@ -219,18 +220,21 @@ Configuration (TypeScript type).
 
 * `firstLineBlank` (`boolean`, default: `false`)
   — serialize with a blank line for the first line of footnote definitions
-* `stringLength` (`((value: string) => number)`, default: `d => d.length`)
-  — detect the size of table cells, used when aligning cells
 * `singleTilde` (`boolean`, default: `true`)
   — whether to support strikethrough with a single tilde;
   single tildes work on github.com, but are technically prohibited by GFM;
   you can always use 2 or more tildes for strikethrough
+* `tableHeadless` (`boolean`, default: `true`)
+  — whether support headless table
+* `colspanWithEmpty` (`boolean`, default: `true`)
+  - Whether to merge cell with the right empty cell which contains no spaces (||).
+  It will be parsed as an empty token type ('tableColspanLeftMarker').
 * `tablePipeAlign` (`boolean`, default: `true`)
   — whether to align table pipes
 * `tableCellPadding` (`boolean`, default: `true`)
   — whether to add a space of padding between table pipes and cells
-* `tableHeadless` (`boolean`, default: `true`)
-  — whether support headless table
+* `stringLength` (`((value: string) => number)`, default: `d => d.length`)
+  — detect the size of table cells, used when aligning cells
 
 ## Examples
 
@@ -336,6 +340,37 @@ This is parsed below when the option enabled:
   </tr>
   </tbody>
   </table>
+
+### Example: `colspanWithEmpty`
+
+```markdown
+  | a | b | c |
+  |--|--|--|
+  |foo| f ||
+  |too|| t |
+```
+
+This is parsed below when the option enabled:
+
+<table>
+<thead>
+<tr>
+<th>a</th>
+<th>b</th>
+<th>c</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>foo</td>
+<td colspan="2">f</td>
+</tr>
+<tr>
+<td colspan="2">too</td>
+<td>t</td>
+</tr>
+</tbody>
+</table>
 
 ### Example: `singleTilde`
 
