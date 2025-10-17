@@ -567,7 +567,7 @@ attacks.
 
 [api-remark-gfm]: #unifieduseremarkgfm-options
 
-[author]: https://wooorm.com
+[author]: mailto:jhuix0117@gmail.com
 
 [downloads]: https://www.npmjs.com/package/@jhuix/remark-gfm
 
@@ -609,9 +609,9 @@ attacks.
 
 [remark-rehype]: https://github.com/remarkjs/remark-rehype
 
-[size]: https://bundlejs.com/?q=remark-gfm
+[size]: https://bundlejs.com/?q=@jhuix/remark-gfm
 
-[size-badge]: https://img.shields.io/bundlejs/size/remark-gfm
+[size-badge]: https://img.shields.io/bundlejs/size/@jhuix/remark-gfm
 
 [string-width]: https://github.com/sindresorhus/string-width
 
