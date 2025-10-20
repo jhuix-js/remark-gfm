@@ -10,4 +10,6 @@ export {default} from './lib/index.js'
  * a parse option and `firstLineBlank`, `stringLength`, `tableCellPadding`,
  * `tablePipeAlign` as serialization options.
  */
-export interface Options extends MicromarkOptions, MdastOptions {}
+export type FromMarkdownOption = MicromarkOptions
+export type ToMarkdownOption = MdastOptions
+export interface Options extends FromMarkdownOption, ToMarkdownOption {}
